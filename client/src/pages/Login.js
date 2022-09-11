@@ -18,7 +18,6 @@ function Login() {
             if (response.data.success) {
                 toast.success(response.data.message);
                 localStorage.setItem("token", response.data.data);
-                toast("Redirecting To Home Page");
                 navigate("/");
             }
             else {

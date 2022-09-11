@@ -26,11 +26,6 @@ function Layout({ children }) {
             path: '/apply-doctor',
             icon: 'ri-hospital-line'
         },
-        {
-            name: 'Profile',
-            path: '/profile',
-            icon: 'ri-profile-fill'
-        },
     ];
 
     // Menu for admin
@@ -52,11 +47,6 @@ function Layout({ children }) {
             icon: 'ri-user-star-line',
 
         },
-        {
-            name: 'Profile',
-            path: '/profile',
-            icon: 'ri-profile-fill'
-        },
 
     ];
 
@@ -70,7 +60,7 @@ function Layout({ children }) {
         },
         {
             name: 'Appointments',
-            path: '/appointments',
+            path: '/doctor/appointments',
             icon: 'ri-file-list-3-line'
         },
         {
@@ -81,12 +71,14 @@ function Layout({ children }) {
     ];
 
     const menuToBeRender = user?.isAdmin ? adminMenu : user?.isdoctor?doctorMenu:userMenu;
+    const role=user?.isAdmin ? "Admin" : user?.isdoctor?"Doctor":"User";
     return (
         <div className='main'>
             <div className="d-flex  layout">
                 <div className='sidebar'>
                     <div className="sidebar-header">
-                        <h1 className='logo'>SH</h1>
+                        <h1 className='logo'>BH</h1>
+                        <h1 className='role'>{role}</h1>
                     </div>
 
                     <div className="menu">

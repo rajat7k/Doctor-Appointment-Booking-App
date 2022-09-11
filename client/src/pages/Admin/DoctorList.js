@@ -5,6 +5,7 @@ import { showLoading, hideLoading } from '../../redux/alertSlice.js'
 import axios from 'axios'
 import { Table } from 'antd'
 import {toast} from 'react-hot-toast'
+import moment from 'moment'
 
 function DoctorList() {
 
@@ -72,8 +73,9 @@ function DoctorList() {
             dataIndex: 'phoneNumber'
         },
         {
-            title: 'Created At',
-            dataIndex: 'createdAt'
+            title: "Created At",
+      dataIndex: "createdAt",
+      render: (record , text) => moment(record.createdAt).format("DD-MM-YYYY"),
         },
         {
             title:'Status',
@@ -86,7 +88,7 @@ function DoctorList() {
             render: (text, record) => (
                 <div className="d-flex">
                     {record.status==="pending" && (<h1 className="anchor" onClick={()=>changeDoctorStatus(record,'approved')}>Approve</h1>) }
-                    {record.status==="approved" && (<h1 className='anchor' onClick={()=>changeDoctorStatus(record,'pending')}>pending</h1>)}
+                    {record.status==="approved" && (<h1 className='anchor' onClick={()=>changeDoctorStatus(record,'block')}>Blocked</h1>)}
                 </div>
             ),
         },

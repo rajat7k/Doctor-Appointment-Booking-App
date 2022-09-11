@@ -7,6 +7,11 @@
     color: white;
     font-weight: bold;
 }
+.role{
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+}
 .sidebar{
     background-color: #005555;
     border-radius: 5px;
@@ -39,6 +44,7 @@
     height: 82vh;
     width: 100%;
     padding: 15px;
+    overflow-x: scroll !important;
 }
 
 .menu{

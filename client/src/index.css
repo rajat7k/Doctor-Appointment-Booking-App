@@ -67,8 +67,9 @@ label{
 }
 
 .card{
-  box-shadow: 0 0 2px gray;
+  box-shadow: 0 0 2px rgb(153, 150, 150);
   border-radius: 0rem !important;
+
 }
 .primary-button{
   background-color: rgb(4, 99, 67) !important;
@@ -87,6 +88,14 @@ label{
   text-decoration: underline !important;
   font-size: 16px !important;
   cursor:  pointer !important;
+}
+p{
+  color: rgba(0,0,0,0.673) !important;
+  margin: 0 !important;
+  padding:0 !important ;
+}
+.cursor-pointer{
+  cursor: pointer;
 }
 
 

@@ -7,7 +7,7 @@ import {toast} from 'react-hot-toast'
 import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
 import DoctorForm from '../../components/DoctorForm'
-
+import moment from 'moment'
 function Profile() {
     const { user } = useSelector((state) => state.user);
     const [doctor,setDoctor]=useState(null);
@@ -17,9 +17,13 @@ function Profile() {
     const onFinish = async(values) => {
         try{
              dispatch(showLoading());
-             const response=await axios.post('/api/user/apply-doctor-account',{
+             const response=await axios.post("/api/doctor/update-doctor-profile",{
                 ...values,
                 userId:user._id,
+                timings:[
+                    moment(values.timings[0]).format("HH:MM"),
+                    moment(values.timings[1]).format("HH:MM")
+                ]
              },
              {
                 headers:{
@@ -45,7 +49,6 @@ function Profile() {
     const getDoctorData = async () => {
         try {
             dispatch(showLoading());
-            console.log(params.userId);
             const response = await axios.post(
                 "/api/doctor/get-doctor-info-by-user-id",
                 {
@@ -75,7 +78,7 @@ function Profile() {
         <Layout>
             <h1 className="page-title">Doctor Profile</h1>
             <hr />
-            <DoctorForm onFinish={onFinish}/>
+             {doctor && <DoctorForm onFinish={onFinish} initValues={doctor}/>}
         </Layout>
     );
 }
