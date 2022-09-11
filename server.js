@@ -30,5 +30,5 @@ if (process.env.NODE_ENV === "production") {
   }
 
  
-
+app.get("/",(req,res)=>res.send("Welcome To The Project"));
 app.listen(port,()=>console.log(`Listening on port ${port}`));
