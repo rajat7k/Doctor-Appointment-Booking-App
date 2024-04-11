@@ -51,9 +51,7 @@ For rest you have to install all packages in packages.json
 
 This is Website is Deployed in Heroku.
 
-```bash
-https://be-healthy-v01.herokuapp.com/
-```
+
 
 
 ## Screenshots
