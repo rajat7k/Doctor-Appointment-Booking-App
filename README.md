@@ -46,13 +46,6 @@ For rest you have to install all packages in packages.json
 ```
 
 
-    
-## Deployment
-
-This is Website is Deployed in Heroku.
-
-
-
 
 ## Screenshots
 
